@@ -79,6 +79,10 @@ public class NavigationStackCompat: ObservableObject {
             }
         }
     }
+    
+    public func removeView(withId identifier: String) {
+        viewStack.removeView(withId: identifier)
+    }
 }
 
 private struct ViewStack {
