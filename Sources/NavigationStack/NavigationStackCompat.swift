@@ -33,7 +33,7 @@ public class NavigationStackCompat: ObservableObject {
         self.easing = easing
     }
 
-    public var viewStack = ViewStack() {
+    private var viewStack = ViewStack() {
         didSet {
             currentView = viewStack.peek()
         }
@@ -81,7 +81,7 @@ public class NavigationStackCompat: ObservableObject {
     }
 }
 
-public struct ViewStack {
+private struct ViewStack {
     private var views = [ViewElement]()
 
     func peek() -> ViewElement? {
@@ -114,6 +114,14 @@ public struct ViewStack {
 
     mutating func popToRoot() {
         views.removeAll()
+    }
+    
+    mutating func removeView(withId identifier: String) {
+        guard let viewIndex = indexForView(withId: identifier) else {
+            
+            return
+        }
+        views.remove(at: viewIndex)
     }
 
     func indexForView(withId identifier: String) -> Int? {
