@@ -56,7 +56,7 @@ public class NavigationStackCompat: ObservableObject {
     /// - Parameters:
     ///   - element: The destination view.
     ///   - identifier: The ID of the destination view (used to easily come back to it if needed).
-    public func push<Element: View>(_ element: Element, withId identifier: String? = nil, animate: Bool = true) {
+    public func push<Element: View>(_ element: Element, withId identifier: String? = nil, Animate animate: Bool = true) {
         navigationType = .push
         if (animate) {
             withAnimation(easing) {
