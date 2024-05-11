@@ -56,12 +56,18 @@ public class NavigationStackCompat: ObservableObject {
     /// - Parameters:
     ///   - element: The destination view.
     ///   - identifier: The ID of the destination view (used to easily come back to it if needed).
-    public func push<Element: View>(_ element: Element, withId identifier: String? = nil) {
+    public func push<Element: View>(_ element: Element, withId identifier: String? = nil, animate: Bool = true) {
         navigationType = .push
-        withAnimation(easing) {
+        if (animate) {
+            withAnimation(easing) {
+                viewStack.push(ViewElement(id: identifier == nil ? UUID().uuidString : identifier!,
+                                           wrappedElement: AnyView(element)))
+            }
+        }else{
             viewStack.push(ViewElement(id: identifier == nil ? UUID().uuidString : identifier!,
                                        wrappedElement: AnyView(element)))
         }
+        
     }
 
     /// Navigates back to a previous view.
