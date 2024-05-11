@@ -81,7 +81,7 @@ public class NavigationStackCompat: ObservableObject {
     }
 }
 
-private struct ViewStack {
+public struct ViewStack {
     private var views = [ViewElement]()
 
     func peek() -> ViewElement? {
