@@ -14,6 +14,7 @@ public struct PushView<Label, Destination, Tag>: View where Label: View, Destina
     private let destinationId: String?
     private let destination: Destination
     private let tag: Tag?
+    private let animate: Bool
     @Binding private var isActive: Bool
     @Binding private var selection: Tag?
 
@@ -28,6 +29,7 @@ public struct PushView<Label, Destination, Tag>: View where Label: View, Destina
                 destinationId: String? = nil,
                 tag: Tag,
                 selection: Binding<Tag?>,
+                animate: Bool = true,
                 @ViewBuilder label: () -> Label) {
 
         self.init(destination: destination,
@@ -35,6 +37,7 @@ public struct PushView<Label, Destination, Tag>: View where Label: View, Destina
                   isActive: Binding.constant(false),
                   tag: tag,
                   selection: selection,
+                  animate: animate,
                   label: label)
     }
 
@@ -43,6 +46,7 @@ public struct PushView<Label, Destination, Tag>: View where Label: View, Destina
                  isActive: Binding<Bool>,
                  tag: Tag?,
                  selection: Binding<Tag?>,
+                 animate: Bool = true,
                  @ViewBuilder label: () -> Label) {
 
         self.label = label()
@@ -51,6 +55,7 @@ public struct PushView<Label, Destination, Tag>: View where Label: View, Destina
         self.tag = tag
         self.destination = destination
         self._selection = selection
+        self.animate = animate
     }
 
     public var body: some View {
@@ -72,7 +77,7 @@ public struct PushView<Label, Destination, Tag>: View where Label: View, Destina
     }
 
     private func push() {
-        navigationStack.push(destination, withId: destinationId)
+        navigationStack.push(destination, withId: destinationId,Animate: animate)
     }
 }
 
