@@ -8,18 +8,6 @@
 import SwiftUI
 
 /// A view used to navigate to another view through its enclosing NavigationStackCompat.
-public struct PushView<Label, Destination, Tag>: View where Label: View, Destination: View, Tag: Hashable {
-    @EnvironmentObject private var navigationStack: NavigationStackCompat
-    private let label: Label?//
-//  Push.swift
-//  
-//
-//  Created by Matteo Puccinelli on 14/04/21.
-//
-
-import SwiftUI
-
-/// A view used to navigate to another view through its enclosing NavigationStackCompat.
 public struct PushView<Label, Destination, Tag , animate>: View where Label: View, Destination: View, Tag: Hashable, animate: Bool  {
     @EnvironmentObject private var navigationStack: NavigationStackCompat
     private let label: Label?
