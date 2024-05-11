@@ -33,7 +33,7 @@ public class NavigationStackCompat: ObservableObject {
         self.easing = easing
     }
 
-    private var viewStack = ViewStack() {
+    public var viewStack = ViewStack() {
         didSet {
             currentView = viewStack.peek()
         }
