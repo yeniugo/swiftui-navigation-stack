@@ -128,7 +128,6 @@ private struct ViewStack {
     
     mutating func removeView(withId identifier: String) {
         guard let viewIndex = indexForView(withId: identifier) else {
-            
             return
         }
         views.remove(at: viewIndex)
