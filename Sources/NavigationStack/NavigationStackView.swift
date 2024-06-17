@@ -60,7 +60,7 @@ public struct NavigationStackView<Root>: View where Root: View {
                 @ViewBuilder rootView: () -> Root) {
 
         self.rootView = rootView()
-        self.navigationStack = navigationStack
+        self._navigationStack = StateObject(wrappedValue: navigationStack)
         switch transitionType {
         case .none:
             self.transitions = (.identity, .identity)
