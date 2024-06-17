@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/matteopuc/swiftui-navigation-stack.git', :tag => s.version.to_s }
   
 
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '14.0'
   s.osx.deployment_target = '10.15'
   s.watchos.deployment_target = '6.0'
   s.swift_version = '5.0'
