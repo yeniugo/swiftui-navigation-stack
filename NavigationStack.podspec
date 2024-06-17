@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '14.0'
   s.osx.deployment_target = '10.15'
   s.watchos.deployment_target = '6.0'
-  s.swift_version = '5.0'
+  s.swift_version = '5.3'
   s.source_files = 'Sources/NavigationStack/**/*'
   
 end
