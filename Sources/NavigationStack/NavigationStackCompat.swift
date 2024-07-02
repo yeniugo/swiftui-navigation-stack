@@ -21,7 +21,7 @@ public class NavigationStackCompat: ObservableObject {
 
     /// The default easing function for push and pop transitions.
     /// - Tag: defaultEasing
-    public static let defaultEasing = Animation.easeOut(duration: 0.2)
+    public static let defaultEasing = Animation.easeOut(duration: 0.35)
 
     @Published var currentView: ViewElement?
     @Published private(set) var navigationType = NavigationType.push
