@@ -7,7 +7,7 @@ let package = Package(
     name: "NavigationStack",
     platforms: [
         .iOS(.v14),
-        .macOS(.v10_15),
+        .macOS(.v11),
         .watchOS(.v6)
     ],
     products: [
